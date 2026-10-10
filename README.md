@@ -4,9 +4,9 @@
 
 | Keterangan | Isi |
 | --- | --- |
-| Nama Lengkap | **[ISI NAMA LENGKAP]** |
+| Nama Lengkap | **Alfath Atha Muhana** |
 | NIM | 124140032 |
-| Kelas Praktikum | **[ISI RA / RB]** |
+| Kelas Praktikum | **RA** |
 
 ## Deskripsi Aplikasi
 
@@ -70,13 +70,13 @@ atha_124140032_pertemuan1/
 ## Tangkapan Layar
 
 ### 1. Form input utama
-![Form input utama](screenshots/01-form-input.png)
+![Form input utama](screenshots/FormInput.png)
 
 ### 2. Validasi error
-![Validasi error](screenshots/02-validasi-error.png)
+![Validasi error](screenshots/ValidasiEror.png)
 
 ### 3. Hasil perhitungan kalkulator dan tabel keranjang
-![Hasil perhitungan](screenshots/03-hasil-perhitungan.png)
+![Hasil perhitungan](screenshots/HasilPerhitungan.png)
 
 ## Penjelasan Teknis Singkat
 

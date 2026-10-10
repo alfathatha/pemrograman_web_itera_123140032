@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan 2: Loop & Fungsi</title>
+  <link rel="stylesheet" href="modul.css">
+</head>
+<body>
+  <p class="nav"><a href="index.html">&larr; Kembali</a></p>
+  <h1>Latihan 2: Loop &amp; Fungsi</h1>
+
+  <h2>1. Tabel Perkalian</h2>
+  <input type="number" id="angka-kali" value="7" min="1">
+  <button id="btn-kali">Tampilkan</button>
+  <div class="out" id="out-kali"></div>
+
+  <h2>2. Faktorial</h2>
+  <input type="number" id="angka-faktorial" value="5" min="0">
+  <button id="btn-faktorial">Hitung</button>
+  <div class="out" id="out-faktorial"></div>
+
+  <h2>3. Bilangan Prima</h2>
+  <input type="number" id="angka-prima" value="17" min="0">
+  <button id="btn-prima">Cek</button>
+  <div class="out" id="out-prima"></div>
+
+  <h2>4. Kalkulator BMI</h2>
+  <input type="number" id="berat" placeholder="Berat (kg)">
+  <input type="number" id="tinggi" placeholder="Tinggi (cm)">
+  <button id="btn-bmi">Hitung BMI</button>
+  <div class="out" id="out-bmi"></div>
+
+  <h2>5. FizzBuzz (1-100)</h2>
+  <div class="out" id="out-fizzbuzz"></div>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+
+    // 1. Tabel perkalian
+    function tabelPerkalian(n) {
+      let teks = "";
+      for (let i = 1; i <= 10; i++) teks += `${n} x ${i} = ${n * i}\n`;
+      return teks.trim();
+    }
+    $("btn-kali").addEventListener("click", () => {
+      $("out-kali").textContent = tabelPerkalian(Number($("angka-kali").value));
+    });
+
+    // 2. Faktorial
+    function faktorial(n) {
+      if (!Number.isInteger(n) || n < 0) return null;
+      let hasil = 1;
+      for (let i = 2; i <= n; i++) hasil *= i;
+      return hasil;
+    }
+    $("btn-faktorial").addEventListener("click", () => {
+      const n = Number($("angka-faktorial").value);
+      const h = faktorial(n);
+      $("out-faktorial").textContent = h === null ? "Masukkan bilangan bulat >= 0." : `${n}! = ${h}`;
+    });
+
+    // 3. Bilangan prima
+    function isPrima(n) {
+      if (!Number.isInteger(n) || n < 2) return false;
+      for (let i = 2; i * i <= n; i++) {
+        if (n % i === 0) return false;
+      }
+      return true;
+    }
+    $("btn-prima").addEventListener("click", () => {
+      const n = Number($("angka-prima").value);
+      $("out-prima").textContent = `${n} ${isPrima(n) ? "adalah" : "bukan"} bilangan prima.`;
+    });
+
+    // 4. BMI
+    function hitungBMI(beratKg, tinggiCm) {
+      const tinggiM = tinggiCm / 100;
+      const bmi = beratKg / (tinggiM * tinggiM);
+      let kategori;
+      if (bmi < 18.5) kategori = "Kurus";
+      else if (bmi < 25) kategori = "Normal";
+      else if (bmi < 30) kategori = "Gemuk";
+      else kategori = "Obesitas";
+      return { bmi: bmi.toFixed(1), kategori };
+    }
+    $("btn-bmi").addEventListener("click", () => {
+      const berat = parseFloat($("berat").value);
+      const tinggi = parseFloat($("tinggi").value);
+      if (!(berat > 0) || !(tinggi > 0)) {
+        $("out-bmi").innerHTML = '<span class="err">Masukkan berat dan tinggi yang valid.</span>';
+        return;
+      }
+      const { bmi, kategori } = hitungBMI(berat, tinggi);
+      $("out-bmi").textContent = `BMI: ${bmi} (${kategori})`;
+    });
+
+    // 5. FizzBuzz
+    function fizzBuzz(batas) {
+      const hasil = [];
+      for (let i = 1; i <= batas; i++) {
+        if (i % 15 === 0) hasil.push("FizzBuzz");
+        else if (i % 3 === 0) hasil.push("Fizz");
+        else if (i % 5 === 0) hasil.push("Buzz");
+        else hasil.push(i);
+      }
+      return hasil;
+    }
+    $("out-fizzbuzz").textContent = fizzBuzz(100).join(", ");
+  </script>
+</body>
+</html>

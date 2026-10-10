@@ -67,17 +67,6 @@ atha_124140032_pertemuan1/
 **Lainnya**
 - [x] Format Rupiah dan tampilan responsif (desktop dan mobile)
 
-## Tangkapan Layar
-
-### 1. Form input utama
-![Form input utama](screenshots/FormInput.png)
-
-### 2. Validasi error
-![Validasi error](screenshots/ValidasiEror.png)
-
-### 3. Hasil perhitungan kalkulator dan tabel keranjang
-![Hasil perhitungan](screenshots/HasilPerhitungan.png)
-
 ## Penjelasan Teknis Singkat
 
 ### 1. Penanganan validasi input

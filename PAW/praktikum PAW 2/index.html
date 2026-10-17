@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daftar Tugas Mahasiswa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Bagian atas: judul dan cuaca -->
+  <header class="header">
+    <div class="header-text">
+      <h1>📚 Daftar Tugas Mahasiswa</h1>
+      <p>Catat tugas, atur tenggat, dan pantau progresmu.</p>
+    </div>
+    <div class="weather-box">
+      <span class="weather-label">Cuaca saat ini</span>
+      <p id="weather">Memuat cuaca...</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Kartu form tambah tugas -->
+    <section class="card">
+      <h2>✏️ Tambah Tugas Baru</h2>
+      <form id="taskForm">
+        <div class="field grow">
+          <label for="title">Nama tugas</label>
+          <input type="text" id="title" placeholder="Contoh: Laporan praktikum jaringan" required>
+        </div>
+        <div class="field">
+          <label for="deadline">Tenggat</label>
+          <input type="date" id="deadline">
+        </div>
+        <div class="field">
+          <label for="category">Kategori</label>
+          <select id="category">
+            <option value="Kuliah">Kuliah</option>
+            <option value="Organisasi">Organisasi</option>
+            <option value="Pribadi">Pribadi</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-add">+ Tambah</button>
+      </form>
+    </section>
+
+    <!-- Kartu daftar tugas -->
+    <section class="card">
+      <div class="list-header">
+        <h2>📋 Tugas Saya</h2>
+        <p id="summary"></p>
+      </div>
+      <ul id="taskList"></ul>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    Tugas Praktikum Pemrograman Web | Teknik Informatika ITERA
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

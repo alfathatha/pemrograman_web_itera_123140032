@@ -1,0 +1,221 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #eef2f6;
+  color: #1f2d3d;
+  margin: 0;
+}
+
+/* ===== Header ===== */
+.header {
+  background: linear-gradient(135deg, #1b4f8a, #2a8bb5);
+  color: white;
+  padding: 30px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  margin: 0 0 5px;
+}
+
+.header-text p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+.weather-box {
+  background: rgba(255, 255, 255, 0.18);
+  padding: 12px 18px;
+  border-radius: 10px;
+}
+
+.weather-label {
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+#weather {
+  margin: 3px 0 0;
+  font-weight: bold;
+}
+
+/* ===== Kartu ===== */
+.container {
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 0 15px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+}
+
+.card h2 {
+  margin: 0 0 15px;
+  font-size: 18px;
+}
+
+/* ===== Form ===== */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.grow {
+  flex: 1;
+  min-width: 200px;
+}
+
+label {
+  font-size: 13px;
+  color: #5d6f80;
+}
+
+input, select {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccd5de;
+  border-radius: 8px;
+}
+
+input:focus, select:focus {
+  outline: 2px solid #2a8bb5;
+  border-color: transparent;
+}
+
+button {
+  padding: 10px 16px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-add {
+  background: #1b4f8a;
+  color: white;
+  border: none;
+}
+
+.btn-add:hover {
+  background: #163f6f;
+}
+
+/* ===== Daftar tugas ===== */
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+#summary {
+  margin: 0 0 15px;
+  background: #e3f1fa;
+  color: #1b4f8a;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Pesan otomatis kalau daftar masih kosong */
+#taskList:empty::before {
+  content: "Belum ada tugas. Tambahkan tugas pertamamu di atas.";
+  display: block;
+  text-align: center;
+  color: #8a99a8;
+  padding: 25px 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  margin-bottom: 8px;
+  border: 1px solid #e1e8ee;
+  border-left: 5px solid #2a8bb5;
+  border-radius: 8px;
+}
+
+li:hover {
+  background: #f7fafc;
+}
+
+li input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+
+.info {
+  flex: 1;
+}
+
+.info small {
+  color: #7a8a99;
+}
+
+/* Tombol Ubah dan Hapus di dalam daftar */
+li button {
+  padding: 6px 12px;
+  font-size: 13px;
+  background: white;
+}
+
+li button:nth-of-type(1) {
+  color: #1b4f8a;
+  border: 1px solid #1b4f8a;
+}
+
+li button:nth-of-type(2) {
+  color: #c43d5a;
+  border: 1px solid #c43d5a;
+}
+
+li button:hover {
+  opacity: 0.7;
+}
+
+/* Tugas yang sudah selesai */
+li.done {
+  border-left-color: #2f855a;
+  background: #f4faf6;
+}
+
+.done .info strong {
+  text-decoration: line-through;
+  color: #999;
+}
+
+/* ===== Footer ===== */
+.footer {
+  text-align: center;
+  color: #7a8a99;
+  font-size: 13px;
+  padding: 20px;
+}

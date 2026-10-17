@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan 1: Variabel & Kondisional</title>
+  <link rel="stylesheet" href="modul.css">
+</head>
+<body>
+  <p class="nav"><a href="index.html">&larr; Kembali</a></p>
+  <h1>Latihan 1: Variabel &amp; Kondisional</h1>
+  <div id="hasil"></div>
+
+  <script>
+    const hasil = document.getElementById("hasil");
+    function tulis(judul, isi) {
+      hasil.innerHTML += `<h2>${judul}</h2><div class="out">${isi}</div>`;
+    }
+
+    // 1. Data diri dengan const dan let
+    const nama = "Atha";
+    let umur = 20;
+    const kotaAsal = "Yogyakarta";
+    tulis("1. Data Diri", `Nama: ${nama}\nUmur: ${umur}\nKota asal: ${kotaAsal}`);
+
+    // 2. Pengecekan kelulusan (nilai >= 70)
+    const nilai = 75;
+    tulis("2. Pengecekan Kelulusan", `Nilai ${nilai}: ${nilai >= 70 ? "LULUS" : "TIDAK LULUS"}`);
+
+    // 3. Kategori umur
+    function kategoriUmur(u) {
+      if (u < 12) return "Anak";
+      else if (u <= 17) return "Remaja";
+      else if (u <= 59) return "Dewasa";
+      return "Lansia";
+    }
+    const daftarUmur = [8, 15, 30, 65];
+    tulis("3. Kategori Umur", daftarUmur.map(u => `Umur ${u}: ${kategoriUmur(u)}`).join("\n"));
+
+    // 4. Switch-case: angka hari (1-7) ke nama hari bahasa Inggris
+    function namaHariInggris(angka) {
+      switch (angka) {
+        case 1: return "Monday";
+        case 2: return "Tuesday";
+        case 3: return "Wednesday";
+        case 4: return "Thursday";
+        case 5: return "Friday";
+        case 6: return "Saturday";
+        case 7: return "Sunday";
+        default: return "Invalid day";
+      }
+    }
+    tulis("4. Konversi Hari (Switch-Case)", [1, 3, 7, 9].map(n => `${n} = ${namaHariInggris(n)}`).join("\n"));
+
+    // 5. Kalkulator grade dengan ternary operator
+    function gradeTernary(n) {
+      return n >= 90 ? "A" : n >= 80 ? "B" : n >= 70 ? "C" : n >= 60 ? "D" : "E";
+    }
+    tulis("5. Grade (Ternary)", [95, 85, 72, 61, 40].map(n => `Nilai ${n}: Grade ${gradeTernary(n)}`).join("\n"));
+  </script>
+</body>
+</html>

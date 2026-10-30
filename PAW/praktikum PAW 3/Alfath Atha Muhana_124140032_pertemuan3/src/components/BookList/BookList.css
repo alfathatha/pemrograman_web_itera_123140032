@@ -1,0 +1,57 @@
+.book-list {
+  list-style: none;
+  padding: 0;
+}
+
+.book-item {
+  background: white;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.book-info h3 {
+  margin: 0 0 5px 0;
+}
+
+.status-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.status-milik {
+  background: #d9f7be;
+}
+
+.status-baca {
+  background: #bae7ff;
+}
+
+.status-beli {
+  background: #fff1b8;
+}
+
+.book-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-btn {
+  background: #ffecb3;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.delete-btn {
+  background: #ffccc7;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
